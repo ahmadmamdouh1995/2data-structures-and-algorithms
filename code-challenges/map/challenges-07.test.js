@@ -13,11 +13,10 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
   let arr2 = [];
-  for(var i  =0 ; i<arr.length; i++){
-      let x=arr[i]*arr[i];
-      arr2.push(x);
+  for(let i=0 ; i< arr.length;i++){
+      arr2.push(Math.pow(2, arr[i]));
   }
-  return arr2;
+  return x;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -28,9 +27,14 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
-  let arr2 = arr.forEach()*arr.forEach();
-  return arr2;
+  let x= [];
+  arr.forEach(val =>{
+      x.push(Math.pow(2, val));
+
+  });
+  return x;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -40,6 +44,9 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+  return arr.map(num => {
+return Math.pow(2, num);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -54,6 +61,9 @@ For example: charCode(['h','i']) returns [104, 105].
 
 const charCode = (arr) => {
   // Solution code here...
+  return arr.map(x => {
+return x.charCodeAt(0);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,8 +78,18 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
 const evenOdd = (arr) => {
   // Solution code here...
+  return arr.map(x => {
+    if (isNaN(x)) {
+      return 'N/A';
+    } else {
+      if (x % 2) {
+        return 'odd';
+      } else {
+        return 'even';
+      }
+    }
+  });
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
