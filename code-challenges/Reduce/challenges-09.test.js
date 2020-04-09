@@ -9,8 +9,9 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  // Solution code here...
-};
+    // Solution code here...
+    return arr.reduce(accumulator => accumulator +=1 );
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -69,9 +70,12 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
-};
-
+    // Solution code here...
+    return arr.reduce((accumulator,character,idx )=>{
+        accumulator[idx]= character.name;
+        return accumulator;
+    }, []);
+  };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -81,8 +85,13 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
-};
+    // Solution code here...
+    return str.split('').reduce((accumulator, value, idx) => {
+      accumulator += str[str.length - 1 - idx];
+      return accumulator;
+    }, '');
+  
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -134,8 +143,14 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
-};
+    // Solution code here...
+    return arr.reduce((accumulator, value) => {
+      if (value.children) {
+        accumulator += value.children.length;
+      }
+      return accumulator;
+    }, 0);
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -167,8 +182,14 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
-};
+    // Solution code here...
+    return arr.reduce((accumulator, value) => {
+      if(isPrime(value)) {
+        accumulator++;
+      }
+      return accumulator;
+    }, 0);
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
